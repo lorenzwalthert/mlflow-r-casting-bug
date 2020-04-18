@@ -1,1 +1,6 @@
 force(mlflow::mlflow_param('large_dbl', type = "numeric"))
+mlflow::mlflow_log_metric("rmse", runif(1))
+mlflow::mlflow_set_tag("production", "true")
+f <- tempfile()
+writeLines("1", f)
+mlflow::mlflow_log_artifact(f, "random")
